@@ -5,7 +5,7 @@
 ## Example #1 - Position
 | Pixel 4 OS8 |
 |:---|
-|<img src="https://user-images.githubusercontent.com/16476224/137114219-6c81fe40-f67d-4bb6-8d1c-5b8f117f68d4.gif" width=320 /> 
+|<img src="https://user-images.githubusercontent.com/16476224/137122147-3233a4fb-b07f-49a1-be5c-6216b45ad3e8.gif" width=320 /> 
 
 # Example #2 – Rotation
 
