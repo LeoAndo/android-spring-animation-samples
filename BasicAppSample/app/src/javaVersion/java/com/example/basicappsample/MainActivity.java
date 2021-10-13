@@ -2,10 +2,12 @@ package com.example.basicappsample;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.basicappsample.widget.SpringPositionImageView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTitle("Example #1 – Position");
         setContentView(R.layout.activity_spring_anim_position);
+        final SpringPositionImageView imgDroid = findViewById(R.id.imgDroid);
+        imgDroid.addEndListener(canceled -> {
+            if (!canceled) {
+                Toast.makeText(MainActivity.this, "onAnimationEnd!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void onClickAction(View view) {
