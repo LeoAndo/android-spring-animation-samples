@@ -19,9 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spring_anim_position);
         final SpringPositionImageView imgDroid = findViewById(R.id.imgDroid);
         imgDroid.addEndListener(canceled -> {
-            if (!canceled) {
-                Toast.makeText(MainActivity.this, "onAnimationEnd!", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(MainActivity.this, "onAnimationEnd!", Toast.LENGTH_SHORT).show();
         });
     }
 
