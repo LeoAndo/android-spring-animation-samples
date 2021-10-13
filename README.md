@@ -2,12 +2,20 @@
 
 [Spring Animation](https://developer.android.com/guide/topics/graphics/spring-animation)のサンプルがKotlinばかりだったので、Java版を作成しました<br>
 
-# capture
-
 ## Example #1 - Position
 | Pixel 4 OS8 |
 |:---|
 |<img src="https://user-images.githubusercontent.com/16476224/137114219-6c81fe40-f67d-4bb6-8d1c-5b8f117f68d4.gif" width=320 /> 
+
+# Example #2 – Rotation
+
+対応中！！
+
+# Example #3 – Scale
+
+対応中！！
+
+
 
 # refs
 https://developer.android.com/guide/topics/graphics/spring-animation<br>
