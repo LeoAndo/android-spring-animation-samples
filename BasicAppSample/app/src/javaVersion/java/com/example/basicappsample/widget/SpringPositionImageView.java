@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.ViewTreeObserver;
 
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 
@@ -41,12 +40,9 @@ public class SpringPositionImageView extends AppCompatImageView {
                 img.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
                 // Registering the update listener
-                xAnim.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
-                    @Override
-                    public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
-                        Log.d("xAnim", "canceled: " + canceled + " value: " + value + " velocity: " + velocity);
-                        listener.onAnimationEnd(canceled);
-                    }
+                xAnim.addEndListener((animation, canceled, value, velocity) -> {
+                    Log.d("xAnim", "canceled: " + canceled + " value: " + value + " velocity: " + velocity);
+                    listener.onAnimationEnd(canceled);
                 });
             }
         });
@@ -81,5 +77,9 @@ public class SpringPositionImageView extends AppCompatImageView {
 
     public void addEndListener(OnSpringAnimationEndListener listener) {
         this.listener = listener;
+    }
+
+    public interface OnSpringAnimationEndListener {
+        void onAnimationEnd(boolean canceled);
     }
 }
