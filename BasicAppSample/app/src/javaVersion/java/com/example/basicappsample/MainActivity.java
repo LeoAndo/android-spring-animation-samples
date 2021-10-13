@@ -1,21 +1,23 @@
 package com.example.basicappsample;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.basicappsample.helpers.AnimationHelper;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        TextView textHello = findViewById(R.id.text_hello);
-        textHello.setText("Hello, Android Java");
-        AnimationHelper.startAlphaAnimation(textHello);
+        setTitle("Example #1 – Position");
+        setContentView(R.layout.activity_spring_anim_position);
+    }
+
+    public void onClickAction(View view) {
+        Snackbar.make(view, "does not implement it yet.", Snackbar.LENGTH_SHORT).show();
     }
 }
