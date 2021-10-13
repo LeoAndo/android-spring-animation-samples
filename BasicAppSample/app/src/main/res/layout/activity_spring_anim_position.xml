@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <com.example.basicappsample.widget.SpringPositionImageView
+        android:id="@+id/imgDroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_android_24"

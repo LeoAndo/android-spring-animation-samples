@@ -5,10 +5,12 @@ import static com.example.basicappsample.helpers.AnimationHelper.createSpringAni
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewTreeObserver;
 
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 
@@ -17,6 +19,8 @@ public class SpringPositionImageView extends AppCompatImageView {
     private SpringAnimation yAnim;
     private static final float STIFFNESS = SpringForce.STIFFNESS_LOW;
     private static final float DAMPING_RATIO = SpringForce.DAMPING_RATIO_HIGH_BOUNCY;
+    private OnSpringAnimationEndListener listener;
+
 
     public SpringPositionImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -35,6 +39,15 @@ public class SpringPositionImageView extends AppCompatImageView {
                 yAnim = createSpringAnimation(
                         img, SpringAnimation.Y, img.getY(), STIFFNESS, DAMPING_RATIO);
                 img.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                // Registering the update listener
+                xAnim.addEndListener(new DynamicAnimation.OnAnimationEndListener() {
+                    @Override
+                    public void onAnimationEnd(DynamicAnimation animation, boolean canceled, float value, float velocity) {
+                        Log.d("xAnim", "canceled: " + canceled + " value: " + value + " velocity: " + velocity);
+                        listener.onAnimationEnd(canceled);
+                    }
+                });
             }
         });
         final float[] dX = new float[1];
@@ -64,5 +77,9 @@ public class SpringPositionImageView extends AppCompatImageView {
             }
             return true;
         });
+    }
+
+    public void addEndListener(OnSpringAnimationEndListener listener) {
+        this.listener = listener;
     }
 }
