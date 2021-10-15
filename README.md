@@ -2,6 +2,10 @@
 
 [Spring Animation](https://developer.android.com/guide/topics/graphics/spring-animation)のサンプルがKotlinばかりだったので、Java版を作成しました<br>
 
+# development environment
+
+<img width="686" alt="127751156-0638bd97-e532-43e9-be12-e758a7118141" src="https://user-images.githubusercontent.com/16476224/134197148-9a8d0c73-2257-49e0-a198-ee0f92cdf4bd.png">
+
 ## Example #1 - Position
 | Pixel 4 OS8 |
 |:---|
