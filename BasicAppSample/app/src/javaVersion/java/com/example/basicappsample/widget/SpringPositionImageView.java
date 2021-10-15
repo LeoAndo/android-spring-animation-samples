@@ -42,7 +42,9 @@ public class SpringPositionImageView extends AppCompatImageView {
                 // Registering the update listener
                 xAnim.addEndListener((animation, canceled, value, velocity) -> {
                     Log.d("xAnim", "canceled: " + canceled + " value: " + value + " velocity: " + velocity);
-                    listener.onAnimationEnd(canceled);
+                    if(listener != null){
+                        listener.onAnimationEnd(canceled);
+                    }
                 });
             }
         });
