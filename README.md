@@ -27,3 +27,4 @@ https://github.com/lcdsmao/SpringX<br>
 https://github.com/huan-nguyen/SpringAnimation<br>
 https://www.thedroidsonroids.com/blog/springanimation-examples<br>
 https://github.com/TakuSemba/SpringSample<br>
+https://github.com/yaraki/AnimateIt<br>
