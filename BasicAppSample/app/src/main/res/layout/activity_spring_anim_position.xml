@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.example.basicappsample.widget.SpringPositionImageView
+    <com.example.basicappsample.widget.SpringPositionView
         android:id="@+id/imgDroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
